@@ -12,9 +12,8 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Player').Player[]} */
   // players = []
   players = loadState("players", [Player])
-  
-  /** @type {import('./Models/Player').Player|null} */
-  activePlayer = null
+  // /** @type {import('./Models/Player').Player|null} */
+  // activePlayer = null
 
 }
 

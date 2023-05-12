@@ -4,22 +4,28 @@ export class Player {
   constructor(data) {
     this.id = generateId()
     this.name = data.name
-    this.score = -0
+    this.score = 0
   }
 
-  get ListTemplate() {
+  static ListTemplate() {
     return `
-    <div class="input-group flex-nowrap">
-      <span class="input-group-text" id="addon-wrapping">@</span>
-      <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">${this.id}
-      <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">${this.name}
-      <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">${this.score}
+    <div class="col-4">
+      <div class="card" style="width: 18rem; height: 11rem;">
+        <h5 class="card-header text-center">Players</h5>
+        <div class="card-body">
+          <div class="card-text">
+            <p>Player: ${this.id} Score: ${this.score}</p>
+            <p>Player: ${this.id} Score: ${this.score}</p>
+            <p class="pb-1">Player: ${this.id} Score: ${this.score}</p>
+          </div>
+        </div>
+      </div>
     </div>`
   }
 
-  // static PlayerForm() {
+  // get PlayerTemplate () {
   //   return `
-  //   `
+  //   <input name="name" id="name" type="text" class="form-control" placeholder="Name..." aria-label="playerName" aria-describedby="addon-wrapping">${this.name}`
   // }
 
 }

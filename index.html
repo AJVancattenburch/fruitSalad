@@ -25,116 +25,104 @@
       </a>
     </nav>
   </header>
-  <main>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <!-- NOTE REMOVED the "app" id. come back if effects usability -->
 
+  <main class="container-fluid">
 
-          <!-- Modal -->
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal">
-            Launch demo modal
-          </button>
-          <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="col-md-6">
-            </div>
-            <div class="modal-dialog">
-              <div class="modal-content" id="modal-guts">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Player Name</h1>
-
-                  <section class="row" id="createPlayerButton">
-                    <div class="col-2">
-                      <button onclick="app.playersController.getPlayerForm()" type="button" class="btn-close"
-                        data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                  </section>
-
-                </div>
-                <div class="modal-body">
-
-                  <!--<div class="input-group flex-nowrap">
-                          <span class="input-group-text" id="addon-wrapping">@</span>
-                          <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
-                        </div>
-                      </form> -->
-
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-
-    <div id="players" class="row">
-
-      <div class="col-4"></div>
-
-        <div class="col-3">
-          <div class="row">
-            <div class="card w-100">
-              <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <div class="input-group flex-nowrap">
-                  <span class="input-group-text" id="addon-wrapping">@</span>
-                  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
-                </div>
-                <button onclick="app.playersController.createPlayer()" class="btn btn-success">Start</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      <div class="col-5">
-        <div class="card m-5 w-75" style="width: 18rem;">
-          <img src="apple.gif" class="card-img-top" alt="apple">
+    <section id="leaderboard" class="row player-card my-3">
+      <!-- <div class="col-4">
+        <div class="card" style="width: 18rem; height: 11rem;">
+          <h5 class="card-header text-center">Players</h5>
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <h4 class="card-text">Players</h4>
-          </div>
-          
-            <div class="row">
-              <div class="col-6">
-                <form action="">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Player: </li>
-                    <li class="list-group-item">Score: </li>
-                    
-                    <!-- NOTE make me the active player button -->
-                    <button onclick="" class="btn btn-primary m-3">Set Player</button>
-                    <li class="list-group-item">Player: </li>
-                    <li class="list-group-item">Score: </li>
-                    
-                    <!-- NOTE make me the active player button -->
-                    <button onclick="" class="btn btn-primary m-3">Set Player</button>
-                    <li class="list-group-item">Player: </li>
-                    <li class="list-group-item">Score: </li>
-                    
-                    <!-- NOTE make me the active player button -->
-                    <button onclick="" class="btn btn-primary m-3">Set Player</button>
-                  </ul>
-                </div>
-                <div class="col-6">
-                  <ul class="list-group list-group-flush">
-                  <div class="card-body">
-                    <!-- <a href="#" class="btn btn-success">Another link</a> -->
-                  </div>
-                  </ul>
-                </form>
-              </div>
+            <div class="card-text">
+              <p>Player: </p>
+              <p>Player: </p>
+              <p class="pb-1">Player: </p>
             </div>
           </div>
         </div>
+      </div> -->
+    </section>
+
+    <section class="row d-flex login-card">
+
+      <div class="col-6 justify-space-between align-items-center">
+        <div class="card text-center" style="width: 25rem; height: 20rem;">
+          <img src="fruit.jpeg" alt="" class="img-fluid p-2 pt-3 h-50">
+          <h5 class="card-title p-3">New Player</h5>
+          <div class="card-body">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal">
+              Click Here
+            </button>
+
+            <section class="row">
+              <section class="col-6">
+
+                <div class="row">
+                  <div class="col-12">
+                    <!-- NOTE REMOVED the "app" id. come back if effects usability -->
+                    <div id="players" class="row">
+                      <div class="col-md-12 p-3 d-flex">
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                          aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content" id="modal-guts">
+                              <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Player Name</h1>
+
+                                <div class="row">
+                                  <div class="col-2">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                      aria-label="Close"></button>
+                                  </div>
+                                </div>
+
+                              </div>
+
+                              <div class="modal-body">
+                                <form onsubmit="app.playersController.createPlayer()">
+                                  <div class="input-group flex-nowrap">
+                                    <span class="input-group-text" id="addon-wrapping"></span>
+                                    <input name="name" id="name" type="text" class="form-control" placeholder="Name..." aria-label="playerName" aria-describedby="addon-wrapping">
+                                    <button type="submit" type="button" class="btn btn-primary">Submit</button>
+                                  </div>
+                                  <div class="p-2">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                  </div>
+                                </form>
+                              </div>
+                              
+                              <div class="modal-footer">
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </section>
+            </section>
+
+          </div>
+        </div>
       </div>
+      
+    </section>
+
+    <!-- <a href="#" class="btn btn-success">Another link</a> -->
+
+
+
+
+
 
   </main>
+
   <footer class="bg-dark text-light">
     <div class="text-center no-select">
       <p><small>Made with 💖 by CodeWorks</small></p>

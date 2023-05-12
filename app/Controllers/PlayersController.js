@@ -2,6 +2,7 @@ import { appState } from "../AppState.js"
 import { playersService } from "../Services/PlayersService.js"
 import { setHTML } from "../Utils/Writer.js"
 import { Player } from "../Models/Player.js"
+import { getFormData } from "../Utils/FormHandler.js"  
 
 
 
@@ -11,7 +12,7 @@ function _drawPlayers() {
   let players = appState.players
   let template = ''
   players.forEach(player => template += player.ListTemplate)
-  // setHTML("players", template)
+  setHTML("leaderboard", template)
 }
 
 function _drawActive() {
@@ -33,12 +34,21 @@ export class PlayersController {
     // appState.on("drawCreatePlayerButton")
   }
 
-  setActive(playerId){
-    console.log('setting active', playerId)
-    playersService.setActive(playerId)
+  // setActive(playerId){
+  //   console.log('setting active', playerId)
+  //   playersService.setActive(playerId)
+  // }
+
+  createPlayer() {
+    window.event.preventDefault()
+    const formHTML = window.event.target
+    console.log("this is the onsubmit event", formHTML);
+    const formData = getFormData(formHTML)
+    console.log("formatted from obj", formData)
+    playersService.createPlayer(formData)
+    formHTML.reset()
+    bootstrap.Modal.getOrCreateInstance('#modal').hide()
   }
-
-
 
 }
 
