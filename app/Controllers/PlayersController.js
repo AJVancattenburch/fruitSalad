@@ -29,15 +29,15 @@ export class PlayersController {
     console.log("herro from players controller")
     _drawPlayers()
     // _drawCreatePlayerButton()
-    // appState.on("players", _drawPlayers)
+    appState.on("players", _drawPlayers)
     
     // appState.on("drawCreatePlayerButton")
   }
 
-  // setActive(playerId){
-  //   console.log('setting active', playerId)
-  //   playersService.setActive(playerId)
-  // }
+  setActive(playerId){
+    console.log('setting active', playerId)
+    playersService.setActive(playerId)
+  }
 
   createPlayer() {
     window.event.preventDefault()
@@ -47,8 +47,7 @@ export class PlayersController {
     console.log("formatted from obj", formData)
     playersService.createPlayer(formData)
     formHTML.reset()
-    // bootstrap.Modal.getOrCreateInstance('#modal').hide()
+    bootstrap.Modal.getOrCreateInstance('#modal').hide()
   }
 
 }
-

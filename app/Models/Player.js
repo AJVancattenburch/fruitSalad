@@ -7,20 +7,17 @@ export class Player {
     this.score = 0
   }
 
-  static ListTemplate() {
+  get ListTemplate() {
     return `
-    <div class="col-4">
-      <div class="card" style="width: 18rem; height: 11rem;">
-        <h5 class="card-header text-center">Players</h5>
-        <div class="card-body">
-          <div class="card-text">
-            <p>Player: ${this.id} Score: ${this.score}</p>
-            <p>Player: ${this.id} Score: ${this.score}</p>
-            <p class="pb-1">Player: ${this.id} Score: ${this.score}</p>
+
+        <div class="card" style="width: 18rem; height: 11rem;">
+          <h5 class="card-header text-center">Player: ${this.name}</h5>
+          <div class="card-body">
+            <div class="card-text text-center">
+              <p id="players">Score: ${this.score}</p>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>`
+        </div>`
   }
 
   // get PlayerTemplate () {
