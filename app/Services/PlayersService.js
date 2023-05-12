@@ -10,9 +10,11 @@ class PlayersService {
     
       createPlayer(formData) {
         let newPlayer = new Player(formData)
-        console.log("still not sucking!", newPlayer)
         appState.players.push(newPlayer)
-        _savePlayers
+        _savePlayers()
+        console.log(appState.players)
+        appState.emit('leaderboard')
+        
       }
 
   // setActive(playerId){

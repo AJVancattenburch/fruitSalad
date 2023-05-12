@@ -47,7 +47,7 @@ export class PlayersController {
     console.log("formatted from obj", formData)
     playersService.createPlayer(formData)
     formHTML.reset()
-    bootstrap.Modal.getOrCreateInstance('#modal').hide()
+    // bootstrap.Modal.getOrCreateInstance('#modal').hide()
   }
 
 }
