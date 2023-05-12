@@ -15,10 +15,10 @@ function _drawPlayers() {
   setHTML("leaderboard", template)
 }
 
-function _drawActive() {
-  console.log("drawing active player");
+// function _drawActive() {
+//   console.log("drawing active player");
   // let activePlayer = appState.activePlayer
-}
+// }
 
 // function _drawCreatePlayerButton() {
 //   console.log("player button buttoning")
